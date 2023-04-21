@@ -1,0 +1,30 @@
+<!-- Change the form method to "get" -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Reader</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Block Reader</h1>
+        <form id="blocks-form" method="get">
+            <label for="validator_index">Validator Index:</label>
+            <input type="number" id="validator_index" name="validator_index" required>
+            <br>
+            <label for="epoch">Epoch:</label>
+            <input type="number" id="epoch" name="epoch" required>
+            <br>
+            <input type="submit" value="Get Blocks">
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
