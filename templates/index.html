@@ -1,30 +1,31 @@
-<!-- Change the form method to "get" -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <script src="/static/d3_functions.js"></script>
+    <script src="/static/app.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block Reader</title>
+    <title>Prospector: Inspect Proposed Blocks!</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Block Reader</h1>
-        <form id="blocks-form" method="get">
-            <label for="validator_index">Validator Index:</label>
-            <input type="number" id="validator_index" name="validator_index" required>
-            <br>
-            <label for="epoch">Epoch:</label>
-            <input type="number" id="epoch" name="epoch" required>
-            <br>
-            <input type="submit" value="Get Blocks">
-        </form>
-        <div id="results"></div>
+    <h1>Validator Blocks</h1>
+    <form id="blocks-form" method="get">
+        <label for="validator_index">Validator Index:</label>
+        <input type="number" id="validator-index" name="validator_index" required>
+        <br>
+        <label for="epoch">Epoch:</label>
+        <input type="number" id="epoch" name="epoch" required>
+        <br>
+        <input type="submit" value="Get Blocks">
+    </form>
+    <div id="results">
+        <div id="blocks-container"></div>
+        <ul id="transactions-container"></ul>
+        <div id="pieChart"></div>
     </div>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="/static/js/app.js"></script>
 </body>
 </html>
