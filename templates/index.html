@@ -3,8 +3,9 @@
 <head>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
-    <script src="/static/d3_functions.js"></script>
-    <script src="/static/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,10 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <h1>Validator Blocks</h1>
+    <header>
+        <img src="/static/img/logo.jpg" alt="Logo" id="logo">
+        <h1>Validator Blocks</h1>
+    </header>
     <form id="blocks-form" method="get">
         <label for="validator_index">Validator Index:</label>
         <input type="number" id="validator-index" name="validator_index" required>
@@ -20,12 +24,32 @@
         <label for="epoch">Epoch:</label>
         <input type="number" id="epoch" name="epoch" required>
         <br>
+        <input type="range" min="0" max="1" value="1" step="0.01" id="rangeSlider" oninput="updateRange(this.value)">
+        <br>
         <input type="submit" value="Get Blocks">
     </form>
-    <div id="results">
+    <div id="results" class="results-container"></div>
         <div id="blocks-container"></div>
         <ul id="transactions-container"></ul>
         <div id="pieChart"></div>
+        <div id="metrics">
+            <div id="transaction-hash"></div>
+            <div id="epoch-number"></div>
+            <div id="epoch-datetime"></div>
+            <div id="total-transactions"></div>
+            <div id="total-eth-transacted"></div>
+            <div id="block-reward"></div>
+            <div id="average-eth-per-transaction"></div>
+        </div>
     </div>
+    
+    <div id="loading-spinner" style="display:none;">
+        <img src="/static/img/spinner.gif" alt="Loading...">
+    </div>
+    
+    <div id="bubble-plot" class="results-container"></div>
+
+    <script src="/static/d3_functions.js"></script>
+    <script src="/static/app.js"></script>
 </body>
 </html>
