@@ -7,13 +7,15 @@ Blockreader is a web application that visualizes Ethereum transaction data withi
 * Click on bubbles to open transaction details on Etherscan
 * Display various transaction metrics, including total transactions, total ETH transacted, block rewards, and average ETH per transaction
 # Getting Started
+
 ## Prerequisites
 The application uses the following libraries and APIs:
 
-**D3.js** (version 5) - For creating the bubble plot visualization
-**Web3.js** (version 1.6.1) - For interacting with Ethereum data
-**jQuery** (version 3.6.0) and jQuery UI (version 1.12.1) - For handling user input and tooltips
-**Inputmask** (version 5.0.6) - For input validation
+* **D3.js** (version 5) - For creating the bubble plot visualization
+* **Web3.js** (version 1.6.1) - For interacting with Ethereum data
+* **jQuery** (version 3.6.0) and jQuery UI (version 1.12.1) - For handling user input and tooltips
+* **Inputmask** (version 5.0.6) - For input validation
+
 ## Setup
 1. Clone the repository to your local machine.
 2. Set up a local web server to serve the application files. You can use any web server of your choice, such as Python's built-in HTTP server or Node.js http-server.
